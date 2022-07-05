@@ -2,8 +2,13 @@
 name = "rust_prisoner"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+keywords=["100", "prisoners", "simualtion", "math", "problem"]
+categories = ["Algorithms", "Mathematics", "Simulation"]
+readme = "README.md"
+repository = "https://github.com/NatanFreeman/search_dir"
+license = "Unlicense"
+license-file = "LICENSE.txt"
+description="The simulation in this Rust code proves the correctness of awnser to the 100 prisoner riddle."
 
 [dependencies]
 rand = "0.8.5"
