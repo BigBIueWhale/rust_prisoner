@@ -14,7 +14,7 @@ struct Prisoner {
 
 fn gen_random_nums(rng: &mut ChaChaRng, num_ballots: i32) -> Vec<i32> {
     assert!(num_ballots > 0);
-    let mut nums: Vec<i32> = (0..num_ballots).collect();
+    let mut nums: Vec<i32> = (1..num_ballots).collect();
     nums.shuffle(rng);
     nums
 }
