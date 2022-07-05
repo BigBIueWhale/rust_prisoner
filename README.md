@@ -1,3 +1,4 @@
+[![Rust](https://github.com/BigBIueWhale/rust_prisoner/actions/workflows/rust.yml/badge.svg?branch=master)](https://github.com/BigBIueWhale/rust_prisoner/actions/workflows/rust.yml)
 # rust_prisoner
 The YouTube video https://www.youtube.com/watch?v=iSNsgj1OCLA contains an interesting riddle with a surprising result.
 \
