@@ -1,6 +1,8 @@
 use rand::SeedableRng;
 use rand_chacha::ChaChaRng;
 use std::boxed::Box;
+use std::panic;
+use std::sync::Mutex;
 
 mod prisoners_riddle;
 
@@ -21,8 +23,16 @@ pub fn calc_stat() -> f64
 }
 
 fn main() {
-    let stat: f64 = calc_stat();
-    println!("Won {}% of the time", stat * 100.0);
+    let stat: Mutex<f64> = Mutex::new(0.0);
+    let result = panic::catch_unwind(|| {
+        let res: f64 = calc_stat();
+        *stat.lock().unwrap() = res;
+    });
+    match result {
+        Ok(_) => {},
+        Err(_) => println!("Caught panic in main"),
+    }
+    println!("Won {}% of the time", *stat.lock().unwrap() * 100.0);
 }
 
 #[cfg(test)]
